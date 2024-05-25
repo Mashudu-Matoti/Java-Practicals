@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Transactions</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+  <h1>Individual Transactions History</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sender</th>
+        <th>Recipient</th>
+        <th>Data</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr th:each="transaction:${transactions}">
+        <td th:text="${transaction.getSender()}"/>
+        <td th:text="${transaction.getReceiver()}"/>
+        <td th:text="${transaction.getData()}"/>
+        <td th:text="${transaction.getTimestamp()}"/>
+      </tr>
+ 
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+  <h1>Blockchain</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Chain</th>
+        <th>Is Chain Valid?</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr th:each="chain:${block}">
+        <td th:text="${chain.toString()}"/>
+        <td th:text="${verify}"/>
+      
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

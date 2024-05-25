@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xlmns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="registration_styles.css"> <!-- Link to external CSS file -->
+</head>
+   <header>
+    <h1>Administrator Login</h1>
+  </header>
+
+  <main>
+    <section class="form">
+      <h2>Please Fill in Details to Proceed</h2>
+      <form th:action="@{/login.html}" th:method="post" th:object="${inst}">
+	        <label>Hospital</label>
+	      	<select th:field="*{institutionName}">
+	      	<option th:each="institutionName: ${allHospitals}"
+	      			th:value="${institutionName}"
+	      			th:text="${institutionName}">
+	      	</option>
+	      	</select><br><br
+	      	<label for="idNum">Full Name:</label>
+            <input type="text" id="fName" name="fName" th:field="*{fName}" placeholder="Full Name" required><br><br
+            
+            <label for="idNum">Practice Number:</label>
+             <input type="text" id="practiceNumber" name="practiceNumber" th:field="*{practiceNumber}" placeholder="Practice Number" required><br><br
+           
+            
+            <label for="idNum">Password:</label>
+             <input type="password" id="password" name="password" placeholder="Password"  th:field="*{password}" required><br><br>
+            </div>
+            <div class="input-group">
+                <button type="submit" id="login-btn">Login</button>
+            </div>
+        </form>
+    </section>
+
+    
+  </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #980002;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  width: 700px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  border: 2px solid #980002;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+select{
+	
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+ }
+ 
+select option{
+  background-color: #fff;
+  color: #333;
+}
+
+select option:hover{
+ background-color: #f1f1f1;
+}
+input[type="text"]{
+color=#980002
+}
+input[type="number"] {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #4CAF50;
+}
+
+button[type="submit"] {
+  background-color: #980002;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+

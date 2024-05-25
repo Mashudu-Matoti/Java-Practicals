@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Transactions</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+  <h1>Patients in Organ Bank</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Full Name</th>
+        <th>Organ</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr th:each="t:${p}">
+        <td th:text="${t.getpatientType()}"/>
+        <td th:text="${t.getfName()}"/>
+        <td th:text="${t.getOrgan()}"/>
+        <td th:text="${t.getMedicalHist()}"/>
+      </tr>
+ 
+      <!-- Add more rows as needed -->
+    </tbody>
+
+</body>
+</html>

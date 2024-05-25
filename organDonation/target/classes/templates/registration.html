@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xlmns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organ Donation Registration</title>
+  <link rel="stylesheet" href="registration_styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Organ Patient Registration</h1>
+  </header>
+
+  <main>
+    <section class="form">
+      <h2>Registration Form</h2>
+      <form th:action="@{/registration.html}" th:method="post" th:object="${patient}">
+      
+      
+      	<label>Patient Type</label>
+      	<select th:field="*{patientType}">
+      	<option th:each="patientType: ${allDepartments}"
+      			th:value="${patientType}"
+      			th:text="${patientType}">
+      	</option>
+      	</select>
+      	<label for="fName">Full Name:</label>
+        <input type="text" id="fName" required th:field="*{fName}"/><br><br>
+        
+        <label for="idNum">Identity Number:</label>
+        <input type="number" id="idNum" required th:field="*{idNum}" th:text="${message}"/><br><br>
+        
+        <label>Organ</label>
+      	<select th:field="*{organ}">
+      	<option th:each="organ: ${allOrgans}"
+      			th:value="${organ}"
+      			th:text="${organ}">
+      	</option>
+      	</select>
+        
+        <label for="medicalHist">Medical Information:</label>
+        <input type="text" id="medicalHist" required th:field="*{medicalHist}"/><br><br>
+        <button type="submit">Register a</button>
+      </form>
+    </section>
+
+    
+  </main>
+
+</body>
+</html>
